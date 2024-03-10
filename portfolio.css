@@ -2,22 +2,114 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #FFE3D8 , #3747a6);
+    background: linear-gradient(to bottom, #526D82 , #DDE6ED, #27374D);
+    background: 
+        linear-gradient(to bottom, #27374D, #DDE6ED ,#526D82) left,
+        linear-gradient(to bottom, #27374D, #DDE6ED ,#526D82) right,
+        linear-gradient(to bottom, #526D82 , #DDE6ED, #27374D);
+    background-size: 65px 100%, 65px 100%, 100% 100%; 
+    background-repeat: no-repeat;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+section {
+    padding: 50px 0;
+    animation: slideInFromLeft 1s ease;
+}
+.animated-heading {
+    animation-name: bounceIn; 
+    animation-duration: 1s; 
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0); 
+    }
+    50% {
+        transform: scale(1.2); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
+
+.animated-heading {
+    animation: bounceIn 1s; 
+}
+
+.animated-nav li {
+    animation: slideInLeft 0.5s ease-in-out;
+}
+
+.animated-nav a {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);  
+    }
+    50% {
+        transform: scale(1.2); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /
+    }
+    100% {
+        opacity: 1; 
+    }
 }
 
 .container {
     width: 80%;
     margin: auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
+    position: relative;
     font-display: auto;
-    border-bottom-left-radius: 10%;
-    border-bottom-right-radius: 10% ;
-    background-color: #0A043C;
+    background-color:#212A3E;
     color: #ffffff;
     padding: 20px 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header img {
+    border: none;
+    position: absolute; 
+    top: 50%; 
+    right: 0; 
+    transform: translateY(-50%); 
+    width: 100px; 
+    height: auto; 
 }
 
 header h1 {
@@ -43,46 +135,100 @@ nav ul li:last-child {
 
 nav ul li a {
     box-shadow: 0 0 10px#0073ff;
-    box-sizing: auto;
     border-style:double ;
     border-radius: 10PX;
     color: #ffffff;
     text-decoration: none;
+    transition: box-shadow 0.3s ease;
 }
 
 section {
     padding: 50px 0;
 }
 
-section h2 {
-    
-    text-shadow: 0 0 2px ;
-    color: #03506F;
-    margin-top: auto;
+nav ul li a:hover {
+    box-shadow: 0 0 20px #0073ff; 
 }
 
-section h3{
-    
-    margin: auto;
+section h2 {
+    border-radius: 10px;
+    border-style: groove;
+    text-align: center;
+    text-shadow: 0 0 2px ;
+    color: #EEEEEE;
+    margin-top: auto;
+    display: inline;
+    padding: 5px;
 }
 
 .port1 img {
+    float: left;
     width: 25%;
     border-radius: 10px;
+    margin-right: 10px;
 }
 
-.port2 bg{
-    margin-right: 1%;
-    width: 50%;
-    border-radius: 10px;
+.port0 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
 
-.img img{
-    
-    width : 50%;
-    background-color: #0073ff;
+.port1 p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.port2 p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.port3 p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.port1 h3 {
+    margin-top: 20px;
+}
+
+.port2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.port2 img {
     border-radius: 10px;
-} 
+    width: calc(50% - 5px); 
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+}
+
+.port2 h3{
+    margin-top: 20px;
+}
+
+.port3 img {
+    float: right;
+    width: 25%;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.port3 h4 {
+    margin-top: 20px;
+}
+.port4 {
+    text-align: center;
+}
+
+.port4 img{
+    border-radius: 15px;
+}
 
 footer {
     background-color: #333;
@@ -90,3 +236,5 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
+
+
